@@ -1136,6 +1136,92 @@ a:focus-visible {
 }
 
 /* =====================================================
+   FAQ SECTION
+   ===================================================== */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+    border: 1px solid rgba(114, 47, 55, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(114, 47, 55, 0.2);
+    box-shadow: 0 4px 15px rgba(114, 47, 55, 0.08);
+}
+
+.faq-question {
+    width: 100%;
+    padding: var(--space-5) var(--space-6);
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--primary);
+    background: rgba(114, 47, 55, 0.02);
+}
+
+.faq-question span {
+    flex: 1;
+}
+
+.faq-icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--primary);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+
+.faq-answer p {
+    padding: 0 var(--space-6) var(--space-5) var(--space-6);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.faq-answer a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.faq-answer a:hover {
+    color: var(--primary-dark);
+}
+
+/* =====================================================
    MOBILE RESPONSIVE ENHANCEMENTS
    ===================================================== */
 @media (max-width: 768px) {
@@ -1160,5 +1246,14 @@ a:focus-visible {
     .contact-form-wrapper::before {
         animation: none;
         background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .faq-question {
+        font-size: var(--text-base);
+        padding: var(--space-4) var(--space-5);
+    }
+
+    .faq-answer p {
+        padding: 0 var(--space-5) var(--space-4) var(--space-5);
     }
 }

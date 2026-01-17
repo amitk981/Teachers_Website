@@ -1,0 +1,23 @@
+{
+    "name": "Archana Ma'am - Social Science Tutor",
+    "short_name": "Archana Tutor",
+    "description": "Best Online Social Science Tutor for CBSE Class 9-12. Personal 1-on-1 tutoring.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FDF8F4",
+    "theme_color": "#722F37",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/images/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["education", "tutoring"]
+}
