@@ -731,7 +731,8 @@
                     <div class="faq-answer">
                         <p>I have <strong>6+ years of teaching experience</strong> at Army Public School (APS). I am
                             <strong>CTET (CBSE) certified</strong> and have cleared AWES CSB at all levels. I have
-                            taught <strong>500+ students</strong> successfully.</p>
+                            taught <strong>500+ students</strong> successfully.
+                        </p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -764,7 +765,8 @@
                     <div class="faq-answer">
                         <p>Unlike EdTech platforms with 500+ students per batch and pre-recorded content, I offer
                             <strong>personal 1-on-1 or small batch sessions</strong>. Every student gets individual
-                            attention, personalized doubt clearing, and customized learning pace.</p>
+                            attention, personalized doubt clearing, and customized learning pace.
+                        </p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -975,9 +977,19 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
 
-    <!-- Initialize Lucide Icons -->
+    <!-- Initialize Lucide Icons (wait for deferred script) -->
     <script>
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+        // Fallback: also try on window load
+        window.addEventListener('load', function () {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
     </script>
 </body>
 
