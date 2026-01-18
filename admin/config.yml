@@ -6,23 +6,19 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-# Site URL (update after deployment)
-site_url: https://archanateaches.com
-display_url: https://archanateaches.com
-
-# Logo for CMS
-logo_url: https://archanateaches.com/images/logo.png
+# Site URL
+site_url: https://karchana.netlify.app
+display_url: https://karchana.netlify.app
 
 # Collections (content types)
 collections:
-  # Blog Posts
+  # Blog Posts - Markdown format for easier editing
   - name: "blog"
     label: "Blog Posts"
-    folder: "blog"
+    folder: "blog/posts"
     create: true
     slug: "{{slug}}"
-    extension: "html"
-    format: "frontmatter"
+    extension: "md"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
@@ -30,6 +26,5 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image Emoji", name: "emoji", widget: "string", default: "📚" }
       - { label: "Body", name: "body", widget: "markdown" }
-    # Template for new posts
     editor:
       preview: false
