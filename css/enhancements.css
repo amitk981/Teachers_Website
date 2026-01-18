@@ -1319,3 +1319,281 @@ a:focus-visible {
         min-width: 16px;
     }
 }
+
+/* =====================================================
+   SUBPAGE STYLES (Subject Pages & Blog Pages)
+   ===================================================== */
+
+/* Hero section for subpages */
+.hero.section {
+    padding-top: 100px;
+}
+
+/* Hero grid for subpages */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-placeholder {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--bg-cream) 100%);
+    border-radius: var(--radius-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Subject card styling on subpages */
+.subject-card {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.subject-card h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.subject-card p {
+    color: var(--text-medium);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.subject-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Card icons on subpages */
+.card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.card-icon i {
+    width: 48px;
+    height: 48px;
+}
+
+/* Feature card styling */
+.feature-card {
+    padding: 1.5rem;
+}
+
+.feature-card h4 {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer improvements */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-links h5 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--secondary);
+}
+
+/* =====================================================
+   SUBPAGE MOBILE RESPONSIVE
+   ===================================================== */
+@media (max-width: 768px) {
+
+    /* Hero grid mobile */
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero.section {
+        padding-top: 80px;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .hero-image-placeholder {
+        width: 200px;
+        height: 200px;
+        font-size: 4rem !important;
+    }
+
+    /* Subjects grid mobile */
+    .subjects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .subject-card {
+        padding: 1.25rem;
+    }
+
+    /* Features grid mobile */
+    .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    .feature-card {
+        padding: 1rem;
+    }
+
+    /* Footer mobile */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* Section headers mobile */
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-header p {
+        font-size: 0.95rem;
+    }
+
+    /* Article content mobile */
+    .article-header {
+        padding-top: 80px !important;
+    }
+
+    .article-header h1 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .article-meta {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .article-content {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .article-content h2 {
+        font-size: 1.25rem;
+    }
+
+    .tip-box {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .cta-box {
+        padding: 1.5rem;
+    }
+
+    .cta-box h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Blog grid mobile */
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-card-content {
+        padding: 1rem;
+    }
+
+    .blog-card h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .section {
+        padding: 2.5rem 0;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .article-header h1 {
+        font-size: 1.35rem;
+    }
+
+    .tip-number {
+        width: 24px;
+        height: 24px;
+        font-size: 0.8rem;
+    }
+}
