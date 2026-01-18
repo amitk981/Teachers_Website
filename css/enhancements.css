@@ -1172,6 +1172,13 @@ a:focus-visible {
     font-weight: var(--font-semibold);
     color: var(--text-dark);
     transition: all 0.3s ease;
+    outline: none;
+}
+
+.faq-question:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 2px var(--primary);
+    border-radius: var(--radius-lg);
 }
 
 .faq-question:hover {
@@ -1617,14 +1624,20 @@ html {
     scroll-padding-top: 80px;
 }
 
-/* Focus states for accessibility */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
+/* Focus states for accessibility - only shows on keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
+}
+
+/* Remove default focus for mouse users */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
 }
 
 /* Better button active states */
