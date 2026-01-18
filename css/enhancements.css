@@ -1074,18 +1074,24 @@
 .section-header h2 {
     position: relative;
     display: inline-block;
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .section-header h2::after {
     content: '';
     position: absolute;
-    bottom: -12px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     border-radius: 2px;
+}
+
+.section-header p {
+    margin-top: 0.5rem;
 }
 
 .section-alt {
