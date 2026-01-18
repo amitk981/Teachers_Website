@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Media files storage
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Site URL (update after deployment)
+site_url: https://archanateaches.com
+display_url: https://archanateaches.com
+
+# Logo for CMS
+logo_url: https://archanateaches.com/images/logo.png
+
+# Collections (content types)
+collections:
+  # Blog Posts
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "html"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Category", name: "category", widget: "select", options: ["Geography", "History", "Civics", "Economics", "NDA", "Study Tips"] }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image Emoji", name: "emoji", widget: "string", default: "📚" }
+      - { label: "Body", name: "body", widget: "markdown" }
+    # Template for new posts
+    editor:
+      preview: false
