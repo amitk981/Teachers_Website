@@ -1398,7 +1398,15 @@ p {
   }
 
   .hero-image {
-    display: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .hero-image-placeholder {
+    width: 200px;
+    height: 200px;
+    font-size: 4rem;
   }
 
   .problem-grid {
@@ -1475,7 +1483,31 @@ p {
   }
 
   .nav-cta {
-    display: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: var(--space-2);
+  }
+
+  /* Touch-friendly nav links */
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu li a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2) var(--space-4);
+  }
+
+  /* Better form inputs on mobile - prevents iOS zoom */
+  .form-input,
+  .form-textarea,
+  .form-select {
+    padding: 1rem;
+    font-size: 16px;
   }
 
   .features-grid {

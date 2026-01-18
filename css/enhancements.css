@@ -1597,3 +1597,124 @@ a:focus-visible {
         font-size: 0.8rem;
     }
 }
+
+/* =====================================================
+   GLOBAL UI POLISH IMPROVEMENTS
+   ===================================================== */
+
+/* Consistent card hover states */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(114, 47, 55, 0.12);
+}
+
+/* Smooth scroll for all anchor links */
+html {
+    scroll-padding-top: 80px;
+}
+
+/* Focus states for accessibility */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Better button active states */
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Loading state for buttons */
+.btn.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Improved link underline on hover */
+.article-content a,
+.footer-links a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Consistent section spacing */
+.section {
+    padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 0;
+    }
+}
+
+/* Footer mobile improvements */
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0 1.5rem;
+    }
+
+    .footer-grid {
+        gap: 1.5rem;
+    }
+
+    .footer-links ul {
+        gap: 0.75rem;
+    }
+
+    .footer-links a {
+        display: inline-block;
+        padding: 0.25rem 0;
+        min-height: 44px;
+        line-height: 44px;
+    }
+
+    .footer-bottom {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+    }
+}
+
+/* Smooth image loading */
+img {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+img[loading] {
+    opacity: 0;
+}
+
+/* Better text selection */
+::selection {
+    background: var(--primary);
+    color: white;
+}
+
+/* Print styles */
+@media print {
+
+    .nav,
+    .whatsapp-float,
+    .nav-toggle,
+    footer {
+        display: none !important;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .section {
+        padding: 1rem 0;
+    }
+}
