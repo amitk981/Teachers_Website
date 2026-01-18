@@ -1406,6 +1406,108 @@ a:focus-visible {
         font-size: 1.5rem;
         word-break: break-word;
     }
+
+    /* =====================================================
+       HERO SECTION MOBILE ALIGNMENT
+       ===================================================== */
+    .hero-badge {
+        margin: 0 auto 1rem auto;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-badges {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .hero-badges .badge {
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* =====================================================
+       ABOUT SECTION MOBILE ALIGNMENT
+       ===================================================== */
+    .about-credentials {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .about-credentials .badge {
+        width: auto;
+        text-align: center;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem;
+    }
+
+    .stat-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+        text-align: left;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+        min-width: auto;
+    }
+
+    .stat-label {
+        margin-top: 0;
+    }
+
+    /* =====================================================
+       FEATURES/PROBLEM CARDS MOBILE
+       ===================================================== */
+    .feature-card,
+    .problem-item {
+        text-align: center;
+    }
+
+    .feature-card .card-icon,
+    .problem-item .feature-icon {
+        margin: 0 auto 1rem auto;
+    }
+
+    /* =====================================================
+       FLOATING LABELS FIX
+       ===================================================== */
+    .subject-card-floating,
+    .feature-label-floating {
+        position: relative !important;
+        transform: none !important;
+        margin: 0 auto 1rem auto;
+        display: block;
+        text-align: center;
+    }
 }
 
 /* Extra small screens */
