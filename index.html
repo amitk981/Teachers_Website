@@ -851,21 +851,16 @@
                 </div>
                 <div class="contact-form-wrapper">
                     <h3>Book Your Free Demo Class</h3>
-                    <form id="contact-form" name="contact" method="POST" action="/thank-you.html" data-netlify="true"
-                        netlify-honeypot="bot-field">
-                        <input type="hidden" name="form-name" value="contact">
-                        <p class="hidden">
-                            <label>Don't fill this out: <input name="bot-field"></label>
-                        </p>
+                    <form id="contact-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="parent-name" class="form-label">Parent's Name *</label>
-                                <input type="text" id="parent-name" name="parent-name" class="form-input"
+                                <input type="text" id="parent-name" name="parent_name" class="form-input"
                                     placeholder="Enter your name" required>
                             </div>
                             <div class="form-group">
                                 <label for="student-name" class="form-label">Student's Name *</label>
-                                <input type="text" id="student-name" name="student-name" class="form-input"
+                                <input type="text" id="student-name" name="student_name" class="form-input"
                                     placeholder="Enter student's name" required>
                             </div>
                         </div>
@@ -877,7 +872,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="class" class="form-label">Class *</label>
-                                <select id="class" name="class" class="form-select" required>
+                                <select id="class" name="student_class" class="form-select" required>
                                     <option value="">Select Class</option>
                                     <option value="9">Class 9</option>
                                     <option value="10">Class 10</option>
@@ -904,7 +899,7 @@
                             <textarea id="message" name="message" class="form-textarea"
                                 placeholder="Tell us about your child's current challenges, goals, or preferred class timings..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" id="submit-btn">
                             <i data-lucide="send" style="width: 20px; height: 20px;"></i>
                             Book Free Demo Class
                         </button>
@@ -915,6 +910,7 @@
                     </form>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -978,19 +974,81 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
 
-    <!-- Initialize Lucide Icons (wait for deferred script) -->
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Initialize Lucide Icons and EmailJS Form Handler -->
     <script>
+        // Initialize Lucide Icons
         document.addEventListener('DOMContentLoaded', function () {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
         });
-        // Fallback: also try on window load
         window.addEventListener('load', function () {
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
         });
+
+        // EmailJS Form Handler
+        // SETUP REQUIRED: Replace these with your EmailJS credentials
+        // 1. Go to https://www.emailjs.com/ and create free account
+        // 2. Add email service (Gmail recommended)
+        // 3. Create email template with variables: {{parent_name}}, {{student_name}}, {{phone}}, {{student_class}}, {{subject}}, {{message}}
+        // 4. Replace the IDs below:
+        const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Get from EmailJS Dashboard > Account > API Keys
+        const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Get from EmailJS Dashboard > Email Services
+        const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Get from EmailJS Dashboard > Email Templates
+
+        // Initialize EmailJS
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init(EMAILJS_PUBLIC_KEY);
+        }
+
+        // Form submission handler
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Check if EmailJS is configured
+                if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+                    alert('EmailJS not configured yet. Please follow setup instructions in the code.');
+                    return;
+                }
+
+                // Show loading state
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span>⏳ Sending...</span>';
+                submitBtn.disabled = true;
+
+                // Get form data
+                const formData = {
+                    parent_name: document.getElementById('parent-name').value,
+                    student_name: document.getElementById('student-name').value,
+                    phone: document.getElementById('phone').value,
+                    student_class: document.getElementById('class').value,
+                    subject: document.getElementById('subject').value || 'Not specified',
+                    message: document.getElementById('message').value || 'No additional message'
+                };
+
+                // Send email
+                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData)
+                    .then(function () {
+                        // Success - redirect to thank you page
+                        window.location.href = '/thank-you.html';
+                    })
+                    .catch(function (error) {
+                        console.error('EmailJS Error:', error);
+                        alert('Sorry, there was an error. Please try WhatsApp instead.');
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    });
+            });
+        }
     </script>
 </body>
 
