@@ -65,6 +65,9 @@
     <!-- Lucide Icons (deferred) -->
     <script src="https://unpkg.com/lucide@latest" defer></script>
 
+    <!-- Netlify Identity Widget (handles login/signup/password reset) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <!-- Web App Manifest -->
     <link rel="manifest" href="/manifest.json">
 
@@ -1047,6 +1050,22 @@
                         submitBtn.innerHTML = originalText;
                         submitBtn.disabled = false;
                     });
+            });
+        }
+
+        // Netlify Identity - handle login redirect and recovery tokens
+        if (window.netlifyIdentity) {
+            // Check for recovery or confirmation tokens in URL
+            if (window.location.hash.includes('recovery_token') ||
+                window.location.hash.includes('confirmation_token') ||
+                window.location.hash.includes('invite_token')) {
+                // Open the identity modal to complete the process
+                window.netlifyIdentity.open();
+            }
+
+            // After login, redirect to admin
+            window.netlifyIdentity.on('login', () => {
+                window.location.href = '/admin/';
             });
         }
     </script>
