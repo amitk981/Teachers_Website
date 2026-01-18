@@ -1606,6 +1606,302 @@ a:focus-visible {
 }
 
 /* =====================================================
+   BLOG ARTICLE STYLING - ENHANCED READABILITY
+   ===================================================== */
+
+/* Article Header */
+.article-header {
+    padding-top: 120px;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-white) 100%);
+    padding-bottom: 2rem;
+}
+
+.article-header h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.3;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-dark);
+}
+
+/* Article Meta info */
+.article-meta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.article-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.article-meta i {
+    opacity: 0.7;
+}
+
+/* Article Content - Enhanced Typography */
+.article-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    line-height: 1.85;
+    font-size: 1.125rem;
+    color: var(--text-medium);
+}
+
+.article-content>p:first-of-type {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+.article-content h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.article-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content ul,
+.article-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+}
+
+.article-content strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.article-content a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.article-content a:hover {
+    opacity: 0.8;
+}
+
+/* Tip Number - Enhanced */
+.tip-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(114, 47, 55, 0.25);
+}
+
+/* Tip Box - Enhanced */
+.tip-box {
+    background: linear-gradient(135deg, rgba(114, 47, 55, 0.05) 0%, rgba(218, 165, 32, 0.08) 100%);
+    padding: 1.5rem 1.75rem;
+    border-radius: var(--radius-lg);
+    margin: 2.5rem 0;
+    border-left: 4px solid var(--secondary);
+    position: relative;
+}
+
+.tip-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.5) 100%);
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+}
+
+.tip-box strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* CTA Box - Enhanced */
+.cta-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: var(--radius-xl);
+    text-align: center;
+    margin: 3.5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.cta-box h3 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+}
+
+.cta-box p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+}
+
+.cta-box .btn {
+    background: white;
+    color: var(--primary);
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cta-box .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Tables in articles */
+.article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.article-content th {
+    background: var(--primary);
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.article-content td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.article-content tr:nth-child(even) {
+    background: var(--bg-cream);
+}
+
+.article-content tr:hover {
+    background: rgba(114, 47, 55, 0.05);
+}
+
+/* Related Articles Section */
+.section-alt h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Article Mobile Responsive */
+@media (max-width: 768px) {
+    .article-header {
+        padding-top: 100px;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .article-header h1 {
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .article-meta {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .article-content {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .article-content>p:first-of-type {
+        font-size: 1.1rem;
+    }
+
+    .article-content h2 {
+        font-size: 1.25rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .tip-number {
+        min-width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+    }
+
+    .tip-box {
+        padding: 1.25rem;
+        margin: 2rem 0;
+    }
+
+    .cta-box {
+        padding: 1.75rem 1.5rem;
+        margin: 2.5rem 0;
+    }
+
+    .cta-box h3 {
+        font-size: 1.25rem;
+    }
+
+    .article-content th,
+    .article-content td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* =====================================================
    GLOBAL UI POLISH IMPROVEMENTS
    ===================================================== */
 
