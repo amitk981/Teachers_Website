@@ -1397,16 +1397,15 @@ p {
     justify-content: center;
   }
 
+  /* Hide hero image and floating badges on mobile - just show buttons */
   .hero-image {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
+    display: none !important;
   }
 
-  .hero-image-placeholder {
-    width: 200px;
-    height: 200px;
-    font-size: 4rem;
+  .hero-float,
+  .hero-float-1,
+  .hero-float-2 {
+    display: none !important;
   }
 
   .problem-grid {
@@ -1482,11 +1481,18 @@ p {
     display: flex;
   }
 
-  .nav-cta {
+  /* Hide nav CTA from nav bar on mobile - it will appear in mobile menu */
+  .nav-container>.nav-cta {
+    display: none;
+  }
+
+  /* Style CTA when it's moved inside the mobile menu */
+  .nav-menu .nav-cta {
     display: block;
     width: 100%;
     text-align: center;
-    margin-top: var(--space-2);
+    margin-top: var(--space-4);
+    padding: var(--space-3) var(--space-4);
   }
 
   /* Touch-friendly nav links */
