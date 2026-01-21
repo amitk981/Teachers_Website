@@ -1774,6 +1774,149 @@ a:focus-visible {
     .blog-card h3 {
         font-size: 1.1rem;
     }
+
+    /* =====================================================
+       CONTACT SECTION MOBILE FIXES
+       ===================================================== */
+    .contact-methods {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .contact-method {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .contact-method-icon {
+        flex-shrink: 0;
+    }
+
+    .contact-method h5 {
+        font-size: 0.9rem;
+    }
+
+    .contact-method p {
+        font-size: 1rem;
+        word-break: break-all;
+    }
+
+    /* =====================================================
+       TESTIMONIAL SECTION MOBILE FIXES
+       ===================================================== */
+    .testimonial-card {
+        padding: 1.25rem;
+    }
+
+    .testimonial-content {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .testimonial-author {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .testimonial-avatar {
+        margin: 0 auto;
+    }
+
+    /* =====================================================
+       STEPS/HOW IT WORKS MOBILE FIXES
+       ===================================================== */
+    .steps-container {
+        gap: 2rem;
+    }
+
+    .step-card {
+        text-align: center;
+    }
+
+    .step-number {
+        margin: 0 auto 1rem auto;
+    }
+
+    .step-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .step-content p {
+        font-size: 0.9rem;
+    }
+
+    /* =====================================================
+       PROBLEM/SOLUTION SECTION MOBILE
+       ===================================================== */
+    .problem-item,
+    .solution-item {
+        text-align: center;
+        padding: 1.25rem;
+    }
+
+    .problem-item .feature-icon,
+    .solution-item .feature-icon {
+        margin: 0 auto 1rem auto;
+    }
+
+    /* =====================================================
+       NAVIGATION MOBILE FIXES
+       ===================================================== */
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-logo {
+        font-size: 1.1rem;
+    }
+
+    .nav-logo-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-cta {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* =====================================================
+       GENERAL MOBILE SPACING FIXES
+       ===================================================== */
+    .lead {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    .badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    /* Card and grid consistency */
+    .card {
+        padding: 1.25rem;
+    }
+
+    /* Section padding consistency */
+    .section {
+        padding: 3rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
 }
 
 /* Extra small mobile */
@@ -1804,6 +1947,28 @@ a:focus-visible {
         width: 24px;
         height: 24px;
         font-size: 0.8rem;
+    }
+
+    /* Extra small contact methods */
+    .contact-method p {
+        font-size: 0.9rem;
+    }
+
+    /* Extra small testimonials */
+    .testimonial-content {
+        font-size: 0.9rem;
+    }
+
+    /* Extra small buttons */
+    .btn {
+        padding: 0.65rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* Nav adjustments */
+    .nav-cta {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
     }
 }
 
