@@ -1459,18 +1459,19 @@ p {
 
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: 60px;
     left: 0;
     right: 0;
     background: #ffffff;
     flex-direction: column;
-    padding: var(--space-6);
+    padding: var(--space-4) var(--space-6) var(--space-6);
     gap: var(--space-4);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     transform: translateY(-150%);
     opacity: 0;
     transition: all var(--transition-base);
     z-index: 999;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   .nav-menu.active {
