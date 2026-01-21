@@ -1462,7 +1462,8 @@ p {
     top: 70px;
     left: 0;
     right: 0;
-    background: var(--bg-white);
+    bottom: 0;
+    background: #ffffff;
     flex-direction: column;
     padding: var(--space-6);
     gap: var(--space-4);
@@ -1470,6 +1471,8 @@ p {
     transform: translateY(-150%);
     opacity: 0;
     transition: all var(--transition-base);
+    z-index: 999;
+    overflow-y: auto;
   }
 
   .nav-menu.active {
